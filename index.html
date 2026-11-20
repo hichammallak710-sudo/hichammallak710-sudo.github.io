@@ -3,117 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hicham Mallak - Portfolio</title>
-    <!-- Police Inter pour un look moderne et technique -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Hicham MALLAK – Ingénieur en Génie Rural</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- En-tête -->
-    <header>
-        <div class="header-content">
-            <div class="logo">HICHAM Mallak</div>
-            <nav>
-                <!-- Menu burger simplifié pour l'exemple -->
-                <div class="menu-icon">≡</div>
-            </nav>
+    <!-- Barre de navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#apropos" class="nav-logo">HICHAM Mallak</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="#apropos" class="menu-link">À Propos</a>
+            <a href="#formation" class="menu-link">Formation</a>
+            <a href="#experience" class="menu-link">Expérience</a>
+            <a href="#projets" class="menu-link">Projets</a>
+            <a href="#competences" class="menu-link">Compétences</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Section Héro (Accueil) -->
-        <section class="hero">
-            <div class="profile-container">
-                <!-- Espace pour votre photo -->
-                <div class="profile-pic-placeholder">
-                    <span>Photo</span>
+    <!-- Section Hero / Accueil -->
+    <section id="apropos" class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="avatar-wrapper">
+                <!-- Pour mettre votre vraie photo : ajoutez un fichier photo.jpg sur GitHub et remplacez le <svg> ci-dessous par : <img src="photo.jpg" alt="Hicham Mallak"> -->
+                <div class="avatar-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
                 </div>
             </div>
-            <h1>Hicham MALLAK</h1>
-            <p class="subtitle">INGÉNIEUR EN GÉNIE RURAL</p>
-            <p class="sub-subtitle">Eau, Environnement et Infrastructures</p>
-            
-            <div class="action-buttons">
-                <a href="#" class="btn btn-primary">Me Contacter</a>
-                <a href="#" class="btn btn-outline">Télécharger CV</a>
+
+            <h1 class="hero-title">Hicham MALLAK</h1>
+            <p class="hero-role">INGÉNIEUR EN GÉNIE RURAL</p>
+            <p class="hero-specialty">Eau, Environnement et Infrastructures</p>
+
+            <!-- Icônes sociales circulaires -->
+            <div class="social-circles">
+                <a href="https://www.linkedin.com" target="_blank" class="circle-btn" aria-label="LinkedIn">
+                    <span class="in-text">in</span>
+                </a>
+                <a href="mailto:hicham.mallak@iav.ac.ma" class="circle-btn" aria-label="Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                </a>
+                <a href="tel:+212600000000" class="circle-btn" aria-label="Téléphone">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
             </div>
-        </section>
+
+            <!-- Boutons d'action -->
+            <div class="hero-buttons">
+                <a href="mailto:hicham.mallak@iav.ac.ma" class="btn-white">Me Contacter</a>
+                <a href="#" class="btn-dark">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Télécharger CV
+                </a>
+            </div>
+
+            <a href="#formation" class="scroll-down" aria-label="Défiler vers le bas">⌄</a>
+        </div>
+    </section>
+
+    <main class="container">
 
         <!-- Section Formation -->
-        <section class="section-container">
+        <section id="formation" class="section">
             <div class="section-header">
-                <span class="line-accent"></span>
+                <span class="header-bar"></span>
                 <h2>Formation</h2>
+                <span class="header-line"></span>
             </div>
 
-            <div class="card summary-card">
-                <p class="accent-text">RÉSUMÉ</p>
-                <p>Élève-ingénieur en Génie Rural à l'IAV Hassan II avec une forte spécialisation hydrique : hydraulique, hydrologie, gestion des ressources en eau, AEP, CFD, assainissement et dessalement. Analytique et rigoureux, je conçois des solutions techniques fiables pour répondre aux défis du stress hydrique et de la préservation de l'environnement.</p>
+            <div class="card card-green-tint">
+                <span class="card-tag-green">RÉSUMÉ</span>
+                <p class="summary-text">
+                    Élève-ingénieur en Génie Rural à l'IAV Hassan II avec une forte spécialisation hydrique : hydraulique, hydrologie, gestion des ressources en eau, AEP, CFD, assainissement et dessalement. Analytique et rigoureux, je conçois des solutions techniques fiables pour répondre aux défis du stress hydrique et de la préservation de l'environnement.
+                </p>
             </div>
 
-            <div class="card">
-                <div class="card-title-group">
-                    <span class="dot"></span>
-                    <h3>Institut agronomique et vétérinaire Hassan II</h3>
+            <div class="card edu-card">
+                <div class="edu-title-row">
+                    <span class="green-dot"></span>
+                    <h3>IAV Hassan II, Rabat</h3>
                 </div>
-                <p class="card-desc">Diplôme d'ingénieur d'État en génie rural</p>
-                <p class="accent-text">2024 - Aujourd'hui</p>
+                <p class="edu-degree">Cycle d'ingénieur d'État – Génie Rural (Eau, Environnement et Infrastructures)</p>
+                <span class="edu-date">2024 – Aujourd'hui</span>
             </div>
 
-            <div class="card">
-                <div class="card-title-group">
-                    <span class="dot"></span>
-                    <h3>Centre Settat</h3>
+            <div class="card edu-card">
+                <div class="edu-title-row">
+                    <span class="green-dot"></span>
+                    <h3>Centre CPGE Settat</h3>
                 </div>
-                <p class="card-desc">Classes préparatoires TSI</p>
-                <p class="accent-text">2021 - 2024</p>
+                <p class="edu-degree">Classes préparatoires aux grandes écoles – Filière TSI</p>
+                <span class="edu-date">2021 – 2024</span>
             </div>
 
-            <div class="card">
-                <div class="card-title-group">
-                    <span class="dot"></span>
-                    <h3>Lycée Technique Al Khawarizmi</h3>
+            <div class="card edu-card">
+                <div class="edu-title-row">
+                    <span class="green-dot"></span>
+                    <h3>Lycée Technique Al Khawarizmi, Casablanca</h3>
                 </div>
-                <p class="card-desc">Baccalauréat Science & Technologie Électrique</p>
-                <p class="accent-text">2019 - 2021</p>
+                <p class="edu-degree">Baccalauréat Sciences et Technologies Électriques</p>
+                <span class="edu-date">2019 – 2021</span>
             </div>
         </section>
 
-        <!-- Section Expériences -->
-        <section class="section-container">
+        <!-- Section Expériences Professionnelles -->
+        <section id="experience" class="section">
             <div class="section-header">
-                <span class="line-accent"></span>
+                <span class="header-bar"></span>
                 <h2>Expériences Professionnelles</h2>
+                <span class="header-line"></span>
             </div>
 
-            <div class="card experience-card">
-                <div class="exp-header">
-                    <h3>BHS Engineering</h3>
-                    <span class="date-badge">Juil - Sep 2026</span>
+            <div class="card card-green-tint exp-card">
+                <div class="exp-top">
+                    <div>
+                        <h3>BHS Engineering</h3>
+                        <p class="exp-subtitle">Stage – Modélisation Hydrologique et Spatiale</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="date-pill">Juil – Sep 2026</span>
+                        <span class="location-text">📍 Rabat</span>
+                    </div>
                 </div>
-                <p class="exp-role">Stage en Modélisation Hydrologique et Spatiale</p>
-                <ul class="task-list">
+                <ul class="green-list">
                     <li>Développement d'une régression linéaire multiple intégrant les coordonnées spatiales.</li>
                     <li>Intégration d'algorithmes de Machine Learning pour optimiser la précision du modèle.</li>
                     <li>Conception de la carte spatialisée des précipitations extrêmes via QGIS.</li>
                 </ul>
             </div>
 
-            <div class="card experience-card">
-                <div class="exp-header">
-                    <h3>STEP d'Aïn Aouda</h3>
-                    <span class="date-badge">Avr - Mai 2026</span>
+            <div class="card exp-card">
+                <div class="exp-top">
+                    <div>
+                        <h3>STEP d'Aïn Aouda</h3>
+                        <p class="exp-subtitle">Stage – Traitement des Eaux Usées et Valorisation</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="date-pill">Avr – Mai 2026</span>
+                        <span class="location-text">📍 Aïn Aouda</span>
+                    </div>
                 </div>
-                <p class="exp-role">Stage en Traitement des Eaux Usées et Valorisation</p>
-                <ul class="task-list">
-                    <li>Étude des filières de traitement et valorisation des boues.</li>
-                    <li>Évaluation de la pollution et modélisation spatiale de l'impact via ArcGIS Pro.</li>
-                    <li>Synthèse technique et propositions d'optimisation.</li>
+                <ul class="green-list">
+                    <li>Étude des filières de traitement biologique et valorisation des boues d'épuration.</li>
+                    <li>Évaluation de la pollution et modélisation spatiale de l'impact environnemental via ArcGIS Pro.</li>
+                    <li>Synthèse technique des performances et propositions d'optimisation hydraulique.</li>
                 </ul>
             </div>
         </section>
+
+        <!-- Section Projets Académiques -->
+        <section id="projets" class="section">
+            <div class="section-header">
+                <span class="header-bar"></span>
+                <h2>Projets Académiques</h2>
+                <span class="header-line"></span>
+            </div>
+
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div>
+                        <h3>Modélisation Hydraulique & Réseau AEP</h3>
+                        <ul class="green-list">
+                            <li>Dimensionnement d'un réseau d'alimentation en eau potable sous pression.</li>
+                            <li>Simulation des régimes permanents et transitoires et équilibrage des nœuds.</li>
+                            <li>Optimisation du tracé et du profil en long des conduites.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span>EPANET  •  AUTOCAD  •  HYDRAULIQUE</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <h3>Simulation CFD d'Écoulements Hydrauliques</h3>
+                        <ul class="green-list">
+                            <li>Modélisation numérique 3D des écoulements à surface libre et en charge.</li>
+                            <li>Analyse des champs de vitesse, de pression et des pertes de charge singulières.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span>ANSYS FLUENT  •  CFD</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <h3>Cartographie SIG & Bassins Versants</h3>
+                        <ul class="green-list">
+                            <li>Extraction automatique du réseau hydrographique à partir de MNT.</li>
+                            <li>Analyse morphométrique et cartographie des zones vulnérables aux crues.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span>QGIS  •  ARCGIS PRO  •  TÉLÉDÉTECTION</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div>
+                        <h3>Conception de Filière d'Assainissement & Dessalement</h3>
+                        <ul class="green-list">
+                            <li>Dimensionnement des ouvrages de prétraitement et traitement secondaire.</li>
+                            <li>Bilan énergétique et étude de faisabilité du dessalement par osmose inverse.</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <span>ASSAINISSEMENT  •  DESSALEMENT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="competences" class="section">
+            <div class="section-header">
+                <span class="header-bar"></span>
+                <h2>Compétences</h2>
+                <span class="header-line"></span>
+            </div>
+
+            <div class="card skill-group-card">
+                <span class="card-tag-green">LOGICIELS & SIMULATION</span>
+                <div class="pills-wrap">
+                    <span class="skill-pill">EPANET</span>
+                    <span class="skill-pill">HEC-RAS</span>
+                    <span class="skill-pill">AutoCAD</span>
+                    <span class="skill-pill">ANSYS Fluent (CFD)</span>
+                    <span class="skill-pill">MATLAB/Simulink</span>
+                    <span class="skill-pill">Covadis</span>
+                </div>
+            </div>
+
+            <div class="card skill-group-card">
+                <span class="card-tag-green">SIG & TÉLÉDÉTECTION</span>
+                <div class="pills-wrap">
+                    <span class="skill-pill">QGIS</span>
+                    <span class="skill-pill">ArcGIS Pro</span>
+                    <span class="skill-pill">Google Earth Engine</span>
+                    <span class="skill-pill">Télédétection Spatiale</span>
+                </div>
+            </div>
+
+            <div class="card skill-group-card">
+                <span class="card-tag-green">LANGAGES & ANALYSE DE DONNÉES</span>
+                <div class="pills-wrap">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">R</span>
+                    <span class="skill-pill">SQL</span>
+                    <span class="skill-pill">Machine Learning</span>
+                    <span class="skill-pill">HTML/CSS</span>
+                </div>
+            </div>
+
+            <!-- Langues -->
+            <div class="card skill-group-card">
+                <span class="card-tag-green">LANGUES</span>
+                <div class="languages-grid">
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span>Arabe</span>
+                            <span class="lang-level">Natif</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span>Français</span>
+                            <span class="lang-level">C1</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span>Anglais</span>
+                            <span class="lang-level">B2</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="card card-green-tint skill-group-card">
+                <span class="card-tag-green">🏅 CERTIFICATIONS</span>
+                <ul class="check-list">
+                    <li>Modélisation Hydrologique et Systèmes d'Information Géographique (QGIS / ArcGIS Pro)</li>
+                    <li>Gestion Intégrée des Ressources en Eau (GIRE) & Infrastructures Hydrauliques</li>
+                </ul>
+            </div>
+
+            <!-- Activités Parascolaires -->
+            <div class="card skill-group-card">
+                <span class="card-tag-green">🎯 ACTIVITÉS PARASCOLAIRES</span>
+                <ul class="green-list">
+                    <li>Membre actif – Association des Élèves Ingénieurs en Génie Rural (IAV Hassan II)</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        menuToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('open');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownMenu.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
