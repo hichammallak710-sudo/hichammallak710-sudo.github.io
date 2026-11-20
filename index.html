@@ -7,346 +7,383 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <style>
+        :root {
+            --bg-main: #04070b;
+            --bg-card: #0a0f17;
+            --bg-card-tint: #071626;
+            --border-card: #152030;
+            --border-accent: #134270;
+            --blue: #0284c7;
+            --blue-bright: #38bdf8;
+            --blue-ice: #bae6fd;
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --text-muted: #64748b;
+        }
 
-    <!-- Barre de navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#apropos" class="nav-logo">HICHAM Mallak</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <nav class="dropdown-menu" id="dropdownMenu">
-            <a href="#apropos" class="menu-link">À Propos</a>
-            <a href="#formation" class="menu-link">Formation</a>
-            <a href="#experience" class="menu-link">Expérience</a>
-            <a href="#projets" class="menu-link">Projets</a>
-            <a href="#competences" class="menu-link">Compétences</a>
-        </nav>
-    </header>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Section Hero / Accueil -->
-    <section id="apropos" class="hero">
-        <div class="hero-glow"></div>
-        <div class="hero-content">
-            <div class="avatar-wrapper">
-                <!-- Pour mettre votre vraie photo : ajoutez un fichier photo.jpg sur GitHub et remplacez le <svg> ci-dessous par : <img src="photo.jpg" alt="Hicham Mallak"> -->
-                <div class="avatar-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                </div>
-            </div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-            <h1 class="hero-title">Hicham MALLAK</h1>
-            <p class="hero-role">INGÉNIEUR EN GÉNIE RURAL</p>
-            <p class="hero-specialty">Eau, Environnement et Infrastructures</p>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-            <!-- Icônes sociales circulaires -->
-            <div class="social-circles">
-                <a href="https://www.linkedin.com" target="_blank" class="circle-btn" aria-label="LinkedIn">
-                    <span class="in-text">in</span>
-                </a>
-                <a href="mailto:hicham.mallak@iav.ac.ma" class="circle-btn" aria-label="Email">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                    </svg>
-                </a>
-                <a href="tel:+212600000000" class="circle-btn" aria-label="Téléphone">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                </a>
-            </div>
+        /* Barre de navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(4, 7, 11, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+            z-index: 1000;
+        }
 
-            <!-- Boutons d'action -->
-            <div class="hero-buttons">
-                <a href="mailto:hicham.mallak@iav.ac.ma" class="btn-white">Me Contacter</a>
-                <a href="#" class="btn-dark">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Télécharger CV
-                </a>
-            </div>
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            <a href="#formation" class="scroll-down" aria-label="Défiler vers le bas">⌄</a>
-        </div>
-    </section>
+        .nav-logo {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+        }
 
-    <main class="container">
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px;
+        }
 
-        <!-- Section Formation -->
-        <section id="formation" class="section">
-            <div class="section-header">
-                <span class="header-bar"></span>
-                <h2>Formation</h2>
-                <span class="header-line"></span>
-            </div>
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: var(--text-white);
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
 
-            <div class="card card-green-tint">
-                <span class="card-tag-green">RÉSUMÉ</span>
-                <p class="summary-text">
-                    Élève-ingénieur en Génie Rural à l'IAV Hassan II avec une forte spécialisation hydrique : hydraulique, hydrologie, gestion des ressources en eau, AEP, CFD, assainissement et dessalement. Analytique et rigoureux, je conçois des solutions techniques fiables pour répondre aux défis du stress hydrique et de la préservation de l'environnement.
-                </p>
-            </div>
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
 
-            <div class="card edu-card">
-                <div class="edu-title-row">
-                    <span class="green-dot"></span>
-                    <h3>IAV Hassan II, Rabat</h3>
-                </div>
-                <p class="edu-degree">Cycle d'ingénieur d'État – Génie Rural (Eau, Environnement et Infrastructures)</p>
-                <span class="edu-date">2024 – Aujourd'hui</span>
-            </div>
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-            <div class="card edu-card">
-                <div class="edu-title-row">
-                    <span class="green-dot"></span>
-                    <h3>Centre CPGE Settat</h3>
-                </div>
-                <p class="edu-degree">Classes préparatoires aux grandes écoles – Filière TSI</p>
-                <span class="edu-date">2021 – 2024</span>
-            </div>
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
-            <div class="card edu-card">
-                <div class="edu-title-row">
-                    <span class="green-dot"></span>
-                    <h3>Lycée Technique Al Khawarizmi, Casablanca</h3>
-                </div>
-                <p class="edu-degree">Baccalauréat Sciences et Technologies Électriques</p>
-                <span class="edu-date">2019 – 2021</span>
-            </div>
-        </section>
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #060b12;
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
+            padding: 10px 24px 20px;
+        }
 
-        <!-- Section Expériences Professionnelles -->
-        <section id="experience" class="section">
-            <div class="section-header">
-                <span class="header-bar"></span>
-                <h2>Expériences Professionnelles</h2>
-                <span class="header-line"></span>
-            </div>
+        .dropdown-menu.open {
+            display: flex;
+        }
 
-            <div class="card card-green-tint exp-card">
-                <div class="exp-top">
-                    <div>
-                        <h3>BHS Engineering</h3>
-                        <p class="exp-subtitle">Stage – Modélisation Hydrologique et Spatiale</p>
-                    </div>
-                    <div class="exp-meta">
-                        <span class="date-pill">Juil – Sep 2026</span>
-                        <span class="location-text">📍 Rabat</span>
-                    </div>
-                </div>
-                <ul class="green-list">
-                    <li>Développement d'une régression linéaire multiple intégrant les coordonnées spatiales.</li>
-                    <li>Intégration d'algorithmes de Machine Learning pour optimiser la précision du modèle.</li>
-                    <li>Conception de la carte spatialisée des précipitations extrêmes via QGIS.</li>
-                </ul>
-            </div>
+        .dropdown-menu a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 12px 0;
+            transition: color 0.2s, padding-left 0.2s;
+        }
 
-            <div class="card exp-card">
-                <div class="exp-top">
-                    <div>
-                        <h3>STEP d'Aïn Aouda</h3>
-                        <p class="exp-subtitle">Stage – Traitement des Eaux Usées et Valorisation</p>
-                    </div>
-                    <div class="exp-meta">
-                        <span class="date-pill">Avr – Mai 2026</span>
-                        <span class="location-text">📍 Aïn Aouda</span>
-                    </div>
-                </div>
-                <ul class="green-list">
-                    <li>Étude des filières de traitement biologique et valorisation des boues d'épuration.</li>
-                    <li>Évaluation de la pollution et modélisation spatiale de l'impact environnemental via ArcGIS Pro.</li>
-                    <li>Synthèse technique des performances et propositions d'optimisation hydraulique.</li>
-                </ul>
-            </div>
-        </section>
+        .dropdown-menu a:hover {
+            color: var(--blue-bright);
+            padding-left: 6px;
+        }
 
-        <!-- Section Projets Académiques -->
-        <section id="projets" class="section">
-            <div class="section-header">
-                <span class="header-bar"></span>
-                <h2>Projets Académiques</h2>
-                <span class="header-line"></span>
-            </div>
+        /* Section Hero */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 110px 20px 40px;
+        }
 
-            <div class="projects-grid">
-                <div class="card project-card">
-                    <div>
-                        <h3>Modélisation Hydraulique & Réseau AEP</h3>
-                        <ul class="green-list">
-                            <li>Dimensionnement d'un réseau d'alimentation en eau potable sous pression.</li>
-                            <li>Simulation des régimes permanents et transitoires et équilibrage des nœuds.</li>
-                            <li>Optimisation du tracé et du profil en long des conduites.</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span>EPANET  •  AUTOCAD  •  HYDRAULIQUE</span>
-                    </div>
-                </div>
+        .hero-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 640px;
+            background: radial-gradient(ellipse 78% 62% at 50% 16%, rgba(14, 165, 233, 0.30) 0%, rgba(2, 132, 199, 0.10) 45%, rgba(4, 7, 11, 0) 76%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-                <div class="card project-card">
-                    <div>
-                        <h3>Simulation CFD d'Écoulements Hydrauliques</h3>
-                        <ul class="green-list">
-                            <li>Modélisation numérique 3D des écoulements à surface libre et en charge.</li>
-                            <li>Analyse des champs de vitesse, de pression et des pertes de charge singulières.</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span>ANSYS FLUENT  •  CFD</span>
-                    </div>
-                </div>
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            width: 100%;
+        }
 
-                <div class="card project-card">
-                    <div>
-                        <h3>Cartographie SIG & Bassins Versants</h3>
-                        <ul class="green-list">
-                            <li>Extraction automatique du réseau hydrographique à partir de MNT.</li>
-                            <li>Analyse morphométrique et cartographie des zones vulnérables aux crues.</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span>QGIS  •  ARCGIS PRO  •  TÉLÉDÉTECTION</span>
-                    </div>
-                </div>
+        .avatar-wrapper {
+            width: 156px;
+            height: 156px;
+            margin: 0 auto 28px;
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: 0 0 55px rgba(56, 189, 248, 0.32);
+            border: 1px solid rgba(56, 189, 248, 0.38);
+            background: #0c1622;
+        }
 
-                <div class="card project-card">
-                    <div>
-                        <h3>Conception de Filière d'Assainissement & Dessalement</h3>
-                        <ul class="green-list">
-                            <li>Dimensionnement des ouvrages de prétraitement et traitement secondaire.</li>
-                            <li>Bilan énergétique et étude de faisabilité du dessalement par osmose inverse.</li>
-                        </ul>
-                    </div>
-                    <div class="project-footer">
-                        <span>ASSAINISSEMENT  •  DESSALEMENT</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-        <!-- Section Compétences -->
-        <section id="competences" class="section">
-            <div class="section-header">
-                <span class="header-bar"></span>
-                <h2>Compétences</h2>
-                <span class="header-line"></span>
-            </div>
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #0e253d, #070e17);
+            color: var(--blue-bright);
+        }
 
-            <div class="card skill-group-card">
-                <span class="card-tag-green">LOGICIELS & SIMULATION</span>
-                <div class="pills-wrap">
-                    <span class="skill-pill">EPANET</span>
-                    <span class="skill-pill">HEC-RAS</span>
-                    <span class="skill-pill">AutoCAD</span>
-                    <span class="skill-pill">ANSYS Fluent (CFD)</span>
-                    <span class="skill-pill">MATLAB/Simulink</span>
-                    <span class="skill-pill">Covadis</span>
-                </div>
-            </div>
+        .hero-title {
+            font-size: clamp(2.4rem, 6vw, 3.65rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
 
-            <div class="card skill-group-card">
-                <span class="card-tag-green">SIG & TÉLÉDÉTECTION</span>
-                <div class="pills-wrap">
-                    <span class="skill-pill">QGIS</span>
-                    <span class="skill-pill">ArcGIS Pro</span>
-                    <span class="skill-pill">Google Earth Engine</span>
-                    <span class="skill-pill">Télédétection Spatiale</span>
-                </div>
-            </div>
+        .hero-role {
+            color: var(--blue-bright);
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
-            <div class="card skill-group-card">
-                <span class="card-tag-green">LANGAGES & ANALYSE DE DONNÉES</span>
-                <div class="pills-wrap">
-                    <span class="skill-pill">Python</span>
-                    <span class="skill-pill">R</span>
-                    <span class="skill-pill">SQL</span>
-                    <span class="skill-pill">Machine Learning</span>
-                    <span class="skill-pill">HTML/CSS</span>
-                </div>
-            </div>
+        .hero-specialty {
+            color: var(--blue-ice);
+            font-size: 0.98rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            opacity: 0.9;
+        }
 
-            <!-- Langues -->
-            <div class="card skill-group-card">
-                <span class="card-tag-green">LANGUES</span>
-                <div class="languages-grid">
-                    <div class="lang-item">
-                        <div class="lang-header">
-                            <span>Arabe</span>
-                            <span class="lang-level">Natif</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="width: 100%;"></div>
-                        </div>
-                    </div>
+        /* Icônes sociales circulaires */
+        .social-circles {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
 
-                    <div class="lang-item">
-                        <div class="lang-header">
-                            <span>Français</span>
-                            <span class="lang-level">C1</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
+        .circle-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #0c141f;
+            border: 1px solid #1b293b;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
 
-                    <div class="lang-item">
-                        <div class="lang-header">
-                            <span>Anglais</span>
-                            <span class="lang-level">B2</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        .circle-btn:hover {
+            border-color: var(--blue-bright);
+            color: var(--text-white);
+            background-color: rgba(56, 189, 248, 0.14);
+            transform: translateY(-2px);
+        }
 
-            <!-- Certifications -->
-            <div class="card card-green-tint skill-group-card">
-                <span class="card-tag-green">🏅 CERTIFICATIONS</span>
-                <ul class="check-list">
-                    <li>Modélisation Hydrologique et Systèmes d'Information Géographique (QGIS / ArcGIS Pro)</li>
-                    <li>Gestion Intégrée des Ressources en Eau (GIRE) & Infrastructures Hydrauliques</li>
-                </ul>
-            </div>
+        .in-text {
+            font-weight: 800;
+            font-size: 1rem;
+        }
 
-            <!-- Activités Parascolaires -->
-            <div class="card skill-group-card">
-                <span class="card-tag-green">🎯 ACTIVITÉS PARASCOLAIRES</span>
-                <ul class="green-list">
-                    <li>Membre actif – Association des Élèves Ingénieurs en Génie Rural (IAV Hassan II)</li>
-                </ul>
-            </div>
-        </section>
+        /* Boutons Hero */
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
 
-    </main>
+        .btn-white {
+            background-color: #ffffff;
+            color: #04070b;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 13px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        }
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        const menuLinks = document.querySelectorAll('.menu-link');
+        .btn-white:hover {
+            background-color: #e0f2fe;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.22);
+        }
 
-        menuToggle.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('open');
-        });
+        .btn-dark {
+            background-color: rgba(56, 189, 248, 0.04);
+            color: var(--text-white);
+            border: 1px solid #1e2e42;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 13px 26px;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
+        }
 
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                dropdownMenu.classList.remove('open');
-            });
-        });
-    </script>
-</body>
-</html>
+        .btn-dark:hover {
+            border-color: var(--blue-bright);
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .scroll-down {
+            display: inline-block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .scroll-down:hover {
+            color: var(--blue-bright);
+            transform: translateY(3px);
+        }
+
+        /* Conteneur & Sections */
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 20px 90px;
+        }
+
+        .section {
+            padding-top: 80px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .header-bar {
+            width: 36px;
+            height: 3px;
+            background-color: var(--blue-bright);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.65rem, 4vw, 2.15rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-white);
+            white-space: nowrap;
+        }
+
+        .header-line {
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.45) 0%, rgba(56, 189, 248, 0) 100%);
+        }
+
+        /* Cartes */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 26px 28px;
+            margin-bottom: 18px;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .card:hover {
+            border-color: #213652;
+        }
+
+        .card-tint {
+            background-color: var(--bg-card-tint);
+            border-color: var(--border-accent);
+        }
+
+        .card-tint:hover {
+            border-color: #1c5d9e;
+        }
+
+        .card-tag {
+            display: block;
+            color: var(--blue-bright);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .summary-text {
+            color: #cbd5e1;
+            font-size: 0.96rem;
+            line-height: 1.75;
+        }
+
+        /* Formation */
